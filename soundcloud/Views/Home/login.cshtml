@@ -1,0 +1,80 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>login</title>
+    <link href="~/Content/login.css" rel="stylesheet" />
+    <script src="~/Content/login.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <body>
+     
+            <section>
+
+                <div class="container">
+
+                    <div class="user signinBx">
+                        <div class="imgBx"><img src="~/Content/blob.jpg" alt="" /></div>
+                        <div class="formBx">
+                            <form action="validate" method="post">
+                                <h2>Sign In</h2>
+
+                                <input type="text" name="txtuname" placeholder="Username" />
+                                <input type="password" name="txtpass" placeholder="Password" />
+                                <input type="submit" name="" value="Login" />
+                                @if (ViewBag.Message == "$")
+                                {
+
+                                    <div class="alert alert-success alert-dismissible fade in">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <strong>Sign UP! Done</strong> you can now login  
+                                    </div>
+                                }
+                                else if (ViewBag.Message == "!pass")
+                                {
+                                    <div class="alert alert-warning alert-dismissible fade in">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <strong>Warning!</strong>Invalid Login details
+                                    </div>
+                                }
+                                <p class="signup">
+                                    Don't have an account ?
+                                    <a href="#" onclick="toggleForm();">Sign Up.</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="user signupBx">
+                        <div class="formBx">
+                            <form action="signup" method="post">
+                                <h2>Create an account</h2>
+                                <input type="text" name="txtuname" placeholder="Username" />
+                                <input type="email" name="txtemail" placeholder="Email Address" />
+                                <input type="password" name="txtpassword" placeholder="Create Password" />
+                                <input type="submit" name="" value="Sign Up" />
+                               
+                                    <p class="signup">
+                                        Already have an account ?
+                                        <a href="#" onclick="toggleForm();">Sign in.</a>
+                                    </p>
+                                </form>
+                        </div>
+                        <div class="imgBx"><img src="~/Content/blob.jpg" alt="" /></div>
+                    </div>
+                   
+                </div>
+
+            </section>
+        }
+        </body>
+</body>
+</html>
